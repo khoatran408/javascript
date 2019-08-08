@@ -19,3 +19,11 @@ function diffArray(arr1, arr2) {
   let rightArr = arr2.filter(x => !arr1.includes(x));
   return rightArr.concat(leftArr);
 }
+
+/*Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+*/
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+  return str.split(/\W|_|(?=[A-Z])/).join('-').toLowerCase();
+}
