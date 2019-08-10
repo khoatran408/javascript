@@ -1,4 +1,5 @@
-/* We'll pass you an array of two numbers. 
+/* Sum All Numbers in a Range 
+We'll pass you an array of two numbers. 
 Return the sum of those two numbers plus the sum of all the numbers between them.
 The lowest number will not always come first.
 */
@@ -11,7 +12,8 @@ function sumAll(arr) {
   return sum;
 }
 
-/*Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. 
+/* Diff Two Arrays
+Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. 
 In other words, return the symmetric difference of the two arrays.
 */
 function diffArray(arr1, arr2) {
@@ -20,7 +22,23 @@ function diffArray(arr1, arr2) {
   return rightArr.concat(leftArr);
 }
 
-/*Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+/*Seek and Destroy
+You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. 
+Remove all elements from the initial array that are of the same value as these arguments.
+*/
+function destroyer(arr) {
+  // Remove all the values
+  console.clear();
+  let newArr = [];
+  newArr.push(arr) ;
+  for (let i = 1; i < arguments.length; i++){ 
+    newArr[i] = newArr[i-1].filter(x => x!== arguments[i]);
+  }
+  return newArr[arguments.length-1];
+}
+
+/* Spinal Tap Case
+Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
 */
 function spinalCase(str) {
   // "It's such a fine line between stupid, and clever."
