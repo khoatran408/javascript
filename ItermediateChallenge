@@ -46,22 +46,19 @@ function spinalCase(str) {
   return str.split(/\W|_|(?=[A-Z])/).join('-').toLowerCase();
 }
 
-/* Translate the provided string to pig latin.
+/* Pig Latin
+Translate the provided string to pig latin.
 Pig Latin takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an "ay".
 If a word begins with a vowel you just add "way" to the end.
 Input strings are guaranteed to be English words in all lowercase.
 */
-///////////////////////////////////still not working ..Should handle words where the first vowel comes in the end of the word.
 function translatePigLatin(str) {
   if (str[0].match(/[aeiou]/)){
     return str+'way';
   } else {
-    let secondStr = str.split(/^[bcdfghjklmnprqstvxyz]+/);
+    let secondStr = str.split(/^[bcdfghjklmnprqstvwxyz]+/);
     let firstStr = str.replace(secondStr[1],'');
   return secondStr[1]+firstStr+'ay';
   //return firstStr;
   }
 }
-console.clear();
-console.log(
-translatePigLatin("oop"));
